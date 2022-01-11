@@ -14,9 +14,6 @@ public class GameManager : MonoBehaviour
     public Ball ball;
     public TMP_Text playerScoreText;
     public TMP_Text computerScoreText;
-<<<<<<< Updated upstream
-    
-=======
     public AudioClip PlayMusic;
 
     public int scoreToReach = 10;
@@ -62,42 +59,24 @@ public class GameManager : MonoBehaviour
         GetComponent<AudioSource> ().Pause ();
         GameIsPaused1 = true;
     }
->>>>>>> Stashed changes
 
     public void _playerScores(){
         _playerScore ++ ;
         this.playerScoreText.text = _playerScore.ToString();
         this.ball.ResetPosition();
-<<<<<<< Updated upstream
-        
-      
-=======
         if(_playerScore == scoreToReach){
             SceneManager.LoadScene(3);
             GetComponent<AudioSource> ().Stop ();
         }
->>>>>>> Stashed changes
     }
 
     public void _pcScores(){
         _pcScore++;
         this.computerScoreText.text = _pcScore.ToString();
         this.ball.ResetPosition();
-<<<<<<< Updated upstream
-    
-        
-    }
-
-    public void Victory()
-    {
-        if(_playerScore.ToString() == "10")
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1);
-=======
         if(_pcScore == scoreToReach){
             SceneManager.LoadScene(2);
             GetComponent<AudioSource> ().Stop ();
->>>>>>> Stashed changes
         }
     }
 

@@ -499,6 +499,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e32cc9f420ce9e040a91ef7111a6b81d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StartMusic: {fileID: 8300000, guid: 57d80c44392b7a04cb20441e9e7b2150, type: 3}
 --- !u!114 &513088512
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -8,8 +8,14 @@ public class PauseMenu : GameManager
 
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
-    public GameObject victoryMenuUI;
-    
+    public AudioClip PauseMusic;
+
+// Start is called before the first frame update
+    void Start()
+    {
+        GetComponent<AudioSource> ().playOnAwake = false;
+        GetComponent<AudioSource> ().clip = PauseMusic;
+    }
 
     // Update is called once per frame
     void Update()
@@ -26,11 +32,6 @@ public class PauseMenu : GameManager
             }
         }
 
-        /*if(_pcScore.ToString() == "5")
-        {
-            victoryMenuUI.SetActive(true);
-            Time.timeScale = 0f;
-        }*/
 
         
     }
@@ -40,6 +41,8 @@ public class PauseMenu : GameManager
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
+        GetComponent<AudioSource> ().Stop ();
+
     }
 
     public void Pause()
@@ -47,6 +50,7 @@ public class PauseMenu : GameManager
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
+        GetComponent<AudioSource> ().Play ();
     }
 
     int i = 0;
@@ -78,14 +82,6 @@ public class PauseMenu : GameManager
 
     }
 
-    /*public void ReturnToMenuEndScreen ()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -1);
-        victoryMenuUI.SetActive(false);
-        Time.timeScale = 1f;
-        
-
-    }*/
 
     public void QuitGame ()
     {

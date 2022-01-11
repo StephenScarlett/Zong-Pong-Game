@@ -11,6 +11,7 @@ public class ScoringZone : MonoBehaviour
      {
          GetComponent<AudioSource> ().playOnAwake = false;
          GetComponent<AudioSource> ().clip = scoreSound;
+
      }  
 
     public EventTrigger.TriggerEvent scoreTrigger;

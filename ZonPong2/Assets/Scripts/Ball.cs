@@ -23,6 +23,8 @@ public class Ball : MonoBehaviour
         _rigidbody.velocity = Vector3.zero;
 
         AddStartingForce();
+        
+
     }
 
     

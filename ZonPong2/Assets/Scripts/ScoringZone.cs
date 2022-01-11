@@ -20,9 +20,10 @@ public class ScoringZone : MonoBehaviour
         if (ball != null){
             BaseEventData eventData = new BaseEventData(EventSystem.current);
             this.scoreTrigger.Invoke(eventData);
-            GetComponent<AudioSource> ().Play ();
+            GetComponent<AudioSource>().Play();
 
         }
             
     }
+
 }

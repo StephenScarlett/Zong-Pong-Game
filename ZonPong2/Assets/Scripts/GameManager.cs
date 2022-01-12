@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     public TMP_Text computerScoreText;
     public AudioClip PlayMusic;
 
-    public int scoreToReach = 10;
+    public int scoreToReach = 3;
     public static bool GameIsPaused1 = false;
 
     // Start is called before the first frame update
@@ -25,6 +25,9 @@ public class GameManager : MonoBehaviour
         
         GetComponent<AudioSource> ().clip = PlayMusic;
         GetComponent<AudioSource> ().Play ();
+
+        
+        
     }
 
      // Update is called once per frame
@@ -46,7 +49,9 @@ public class GameManager : MonoBehaviour
  
         }
 
+
     }
+
 
     public void Resume1()
     {
@@ -80,7 +85,26 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    
+    public void SavePlayer ()
+    {
+        SaveSystem.SavePlayer(this);
+        //Debug.LogError("Save: " + _playerScore);
+        //Debug.LogError("Save: " + _pcScore);
+    }
+
+    public void LoadPlayer ()
+    {
+        PlayerData data = SaveSystem.LoadPlayer();
+        _playerScore = data._playerScore;
+        _pcScore = data._pcScore;
+        //Debug.LogError("Save: " + _playerScore);
+        //Debug.LogError("Save: " + _pcScore);
+        this.playerScoreText.text = data._playerScore.ToString();
+        this.computerScoreText.text = data._pcScore.ToString();
+        this.ball.ResetPosition();
+        
+        
+    }
 
 
 }

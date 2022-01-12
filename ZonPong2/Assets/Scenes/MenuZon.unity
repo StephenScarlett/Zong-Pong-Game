@@ -480,6 +480,7 @@ GameObject:
   - component: {fileID: 513088512}
   - component: {fileID: 513088511}
   - component: {fileID: 513088516}
+  - component: {fileID: 513088517}
   m_Layer: 5
   m_Name: Main Menu
   m_TagString: Untagged
@@ -681,6 +682,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &513088517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 513088510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af344f3050dc4264c9d11f1eff691f23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerScore: 0
+  _pcScore: 0
+  playerPaddle: {fileID: 0}
+  computerPaddle: {fileID: 0}
+  ball: {fileID: 0}
+  playerScoreText: {fileID: 0}
+  computerScoreText: {fileID: 0}
+  PlayMusic: {fileID: 8300000, guid: 57d80c44392b7a04cb20441e9e7b2150, type: 3}
+  scoreToReach: 3
 --- !u!1 &707607044
 GameObject:
   m_ObjectHideFlags: 0

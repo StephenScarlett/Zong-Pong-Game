@@ -8,19 +8,20 @@ public class PauseMenu : GameManager
 
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
-    public AudioClip PauseMusic;
+    public GameObject mainMenuUI1;
+    //public AudioClip PauseMusic;
 
 // Start is called before the first frame update
     void Start()
     {
-        GetComponent<AudioSource> ().playOnAwake = false;
-        GetComponent<AudioSource> ().clip = PauseMusic;
+        //GetComponent<AudioSource> ().playOnAwake = false;
+        //GetComponent<AudioSource> ().clip = PauseMusic;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(Input.GetKeyDown(KeyCode.Escape) &&  mainMenuUI1.activeInHierarchy == false)
         {
             if(GameIsPaused)
             {
@@ -41,7 +42,7 @@ public class PauseMenu : GameManager
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
-        GetComponent<AudioSource> ().Stop ();
+        //GetComponent<AudioSource> ().Stop ();
 
     }
 
@@ -50,7 +51,7 @@ public class PauseMenu : GameManager
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
-        GetComponent<AudioSource> ().Play ();
+        //GetComponent<AudioSource> ().Play ();
     }
 
     int i = 0;
@@ -75,10 +76,12 @@ public class PauseMenu : GameManager
 
     public void ReturnToMenu ()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -1);
+
+        mainMenuUI.SetActive(true);
         pauseMenuUI.SetActive(false);
-        Time.timeScale = 1f;
+        Time.timeScale = 0f;
         GameIsPaused = false;
+        ball.ResetPosition();
 
     }
 

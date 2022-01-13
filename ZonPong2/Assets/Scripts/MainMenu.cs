@@ -6,27 +6,31 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
 
-    public AudioClip StartMusic;
+    public GameObject mainMenuUI;
+    public AudioClip MainMusic;
 
-    // Start is called before the first frame update
+
     void Start()
     {
-        
-        GetComponent<AudioSource> ().clip = StartMusic;
+        Time.timeScale = 0f;
+        GetComponent<AudioSource> ().playOnAwake = true;
+        GetComponent<AudioSource> ().clip = MainMusic;
     }
 
     // Update is called once per frame
     void Update()
     {
         
+        
     }
 
-    public void StartGame ()
+    public void PlayGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1);
-        GetComponent<AudioSource> ().Stop ();
+        mainMenuUI.SetActive(false);
+        Time.timeScale = 1f;
 
     }
+
 
 
     public void QuitGame ()

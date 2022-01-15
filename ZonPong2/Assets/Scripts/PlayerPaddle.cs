@@ -8,6 +8,7 @@ public class PlayerPaddle : Paddle
     //public GameObject hitSFX;
     private Vector2 _direction;
     public AudioClip meow;
+    public bool direction = false;
 
     void Start ()   
      {
@@ -17,7 +18,7 @@ public class PlayerPaddle : Paddle
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+       /* if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
             _direction = Vector2.up;
         }
@@ -27,9 +28,30 @@ public class PlayerPaddle : Paddle
         }
         else
         {
-            _direction = Vector2.zero;
+         _direction = Vector2.zero;   
         }
+        */
+        
     }
+
+    public void goUp()
+    {
+            _direction = Vector2.up;
+  
+    }
+
+     public void goDown()
+    {
+       _direction = Vector2.down;
+    }
+
+    public void dohMove()
+    {
+        _direction = Vector2.zero;
+    }
+
+
+
 
     private void FixedUpdate()
     {

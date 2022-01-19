@@ -113,7 +113,9 @@ public class GameManager : MonoBehaviour
         this.playerScoreText.text = _playerScore.ToString();
         this.ball.ResetPosition();
         if(_playerScore == scoreToReach){
-            SceneManager.LoadScene(2);
+
+            SaveSystem.SavePlayer4(this);
+            SceneManager.LoadScene(3);
             GetComponent<AudioSource> ().Stop ();
         }
     }
@@ -123,7 +125,9 @@ public class GameManager : MonoBehaviour
         this.computerScoreText.text = _pcScore.ToString();
         this.ball.ResetPosition();
         if(_pcScore == scoreToReach){
-            SceneManager.LoadScene(1);
+
+            SaveSystem.SavePlayer4(this);
+            SceneManager.LoadScene(2);
             GetComponent<AudioSource> ().Stop ();
         }
     }

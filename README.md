@@ -1,4 +1,2 @@
 # Zong-Pong-Game
-A simple game of Pong as practice for a Final Year Project
-
-Coauthored with shaniaanura
+A simple game of Pong as practice for a Final Year Project, coauthored with shaniaanura
